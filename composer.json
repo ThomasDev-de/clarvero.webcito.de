@@ -1,0 +1,17 @@
+{
+  "name": "webcito/clarvero",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "thomas",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "components/jquery": "^3",
+    "twbs/bootstrap": "^v5",
+    "twbs/bootstrap-icons": "^1"
+  }
+}

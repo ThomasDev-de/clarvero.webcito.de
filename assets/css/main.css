@@ -1,0 +1,27 @@
+header {
+    background: #26468C;
+    color: white;
+}
+
+body {
+    color: white;
+    background: #3B61A1;
+    background: linear-gradient(148deg, rgba(59, 97, 161, 1) 0%, rgba(61, 95, 156, 1) 40%, rgba(81, 232, 192, 0.5) 100%);
+}
+
+.white-gradient {
+    border-radius: 20px;
+    height: 177px;
+    width: 286px;
+    background: #6C83AB;
+    background: linear-gradient(45deg,rgba(108, 131, 171, 1) 10%, rgba(255, 255, 255, 0.5) 90%);
+}
+
+.btn-1 {
+    width: 450px;
+    height: 90px;
+    padding: 15px 50px !important;
+    color: white !important;
+    background: #5CFFBB;
+    background: linear-gradient(157deg, rgba(92, 255, 187, 1) 0%, rgba(24, 116, 214, 0.5) 100%);
+}
