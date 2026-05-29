@@ -9,12 +9,66 @@ body {
     background: linear-gradient(148deg, rgba(59, 97, 161, 1) 0%, rgba(61, 95, 156, 1) 40%, rgba(81, 232, 192, 0.5) 100%);
 }
 
+.wave-wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+.wave {
+    position: absolute;
+    top: 450px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/wave.svg');
+    background-size: cover;
+    /*background-attachment: fixed;*/
+    background-position: top center;
+}
+
 .white-gradient {
+    position: absolute;;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
     border-radius: 20px;
     height: 177px;
     width: 286px;
     background: #6C83AB;
-    background: linear-gradient(45deg,rgba(108, 131, 171, 1) 10%, rgba(255, 255, 255, 0.5) 90%);
+    background: linear-gradient(45deg, rgba(108, 131, 171, 1) 10%, rgba(255, 255, 255, 0.5) 90%);
+}
+
+.content-bottom {
+    position: relative;
+    margin-top: 200px;
+}
+.electrician {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+}
+.line-gradient {
+    position: relative;
+    min-width: 300px;
+}
+
+.line-gradient::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+            to right,
+            transparent 0%,
+            white 50%,
+            transparent 100%
+    );
 }
 
 .btn-1 {
@@ -24,4 +78,116 @@ body {
     color: white !important;
     background: #5CFFBB;
     background: linear-gradient(157deg, rgba(92, 255, 187, 1) 0%, rgba(24, 116, 214, 0.5) 100%);
+}
+
+html,
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+:root {
+    --electrician-box-width: clamp(240px, 26vw, 340px);
+    --electrician-box-height: calc(var(--electrician-box-width) * 177 / 286);
+    --electrician-wave-overlap: clamp(12px, 2vh, 24px);
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header,
+main,
+body > p {
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    z-index: 3;
+}
+
+main {
+    min-height: 0;
+}
+
+
+.illustration {
+    position: fixed;
+    top: calc(50vh - var(--electrician-box-height) + var(--electrician-wave-overlap));
+    left: 50%;
+    z-index: 0;
+    width: var(--electrician-box-width);
+    height: var(--electrician-box-height);
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/*.white-gradient {*/
+/*    position: static;*/
+/*    z-index: auto;*/
+/*    display: flex;*/
+/*    align-items: flex-start;*/
+/*    justify-content: center;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    overflow: hidden;*/
+/*}*/
+
+.illustration img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+}
+
+
+.btn-1 {
+    width: min(100%, 450px);
+    height: auto;
+    min-height: 90px;
+}
+
+.cta-button {
+    max-width: 100%;
+    white-space: normal;
+}
+
+.benefit-list {
+    width: min(100%, 560px) !important;
+}
+
+@media (max-width: 575.98px) {
+    :root {
+        --electrician-box-width: min(72vw, 280px);
+        --electrician-wave-overlap: 14px;
+    }
+
+    .content-bottom,
+    .content-bottom > div {
+        width: 100%;
+    }
+
+    .btn-1 {
+        min-height: 56px;
+        padding: 10px 24px !important;
+        font-size: 1.15rem !important;
+    }
+
+    .btn-1 .bi {
+        margin-left: 0.5rem !important;
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-height: 620px) {
+    :root {
+        --electrician-box-width: clamp(190px, 30vw, 260px);
+        --electrician-wave-overlap: 12px;
+    }
 }
